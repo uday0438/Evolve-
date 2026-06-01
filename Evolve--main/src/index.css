@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  
+  --color-evolve-bg-base: #0b0b0c;
+  --color-evolve-bg-surface: #131314;
+  --color-evolve-bg-card: #1e1f20;
+  --color-evolve-border: #282a2c;
+  
+  --color-evolve-text: #e3e3e3;
+  --color-evolve-text-muted: #808184;
+  --color-evolve-text-secondary: #c4c7c5;
+  
+  --color-evolve-accent-blue: #4285f4;
+  --color-evolve-accent-purple: #9b51e0;
+  --color-evolve-accent-pink: #ff7597;
+}
+
+body {
+  background-color: var(--color-evolve-bg-base);
+  color: var(--color-evolve-text);
+  font-family: var(--font-sans);
+}
+
+.evolve-brand-gradient {
+  background: linear-gradient(45deg, #4285f4 0%, #9b51e0 50%, #ff7597 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.evolve-ambient-mesh {
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(66, 133, 244, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 15% 80%, rgba(155, 81, 224, 0.12) 0%, transparent 40%);
+}
+
+.evolve-liquid-glass {
+  background: rgba(30, 31, 32, 0.4);
+  backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.evolve-liquid-header {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.pulse-loading {
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  height: 16px;
+  background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loadingShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Markdown Body Overrides */
+.markdown-body {
+  word-break: break-word;
+}
+.markdown-body p { margin-bottom: 1em; }
+.markdown-body p:last-child { margin-bottom: 0; }
+.markdown-body strong { font-weight: 600; color: #fff; }
+.markdown-body ul { list-style-type: disc; margin-left: 1.5em; margin-bottom: 1em; }
+.markdown-body ol { list-style-type: decimal; margin-left: 1.5em; margin-bottom: 1em; }
+.markdown-body li { margin-bottom: 0.25em; }
+.markdown-body h1 { fontSize: 1.5em; font-weight: 600; margin-bottom: 0.5em; color: #fff; }
+.markdown-body h2 { fontSize: 1.25em; font-weight: 600; margin-bottom: 0.5em; color: #fff; mt: 1em; }
+.markdown-body h3 { fontSize: 1.1em; font-weight: 600; margin-bottom: 0.5em; color: #fff; }
+.markdown-body a { color: var(--color-evolve-accent-blue); text-decoration: underline; }
+.markdown-body code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; background: rgba(255,255,255,0.1); padding: 0.1em 0.3em; border-radius: 4px; font-size: 0.9em; }
+.markdown-body pre code { background: none; padding: 0; }
+.markdown-body pre { background: rgba(0,0,0,0.5); padding: 1em; border-radius: 8px; overflow-x: auto; margin-bottom: 1em; border: 1px solid rgba(255,255,255,0.1); }
+
+/* Premium Skeleton Pulse Animation */
+.skeleton-pulse {
+  animation: skeletonPulseKeyframes 1.8s ease-in-out infinite;
+}
+
+@keyframes skeletonPulseKeyframes {
+  0%, 100% {
+    opacity: 1;
+    background-color: #1e1f20;
+  }
+  50% {
+    opacity: 0.55;
+    background-color: #282a2c;
+  }
+}
+
